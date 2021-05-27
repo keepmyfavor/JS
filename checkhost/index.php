@@ -64,7 +64,7 @@ function defaultConfig(){
 	$config['configfile'] = 'netstat.conf.php';
 	
 	// my network, title and headline of the page
-	$config['title'] = "Our Network Status";
+	$config['title'] = "Network Status";
 	$config['headline'] = $config['title'];
 	
 	// if $alertfile exists the contents will be included()/shown (use HTML!)
@@ -82,29 +82,27 @@ function defaultConfig(){
 	
 	$config['checks'] = array(
 	
-	     'Work Day Host |headline',
-	 'localhost | ping| ICMP ping (ping)',
+	 'Listening Lists |headline',
+	 'localhost | ping| localhost ICMP ping (ping)',
 	 'mail.pesi.com.tw |  110 | PESI Mail Server (port 110)',
      'mail.pesi.com.tw |  25 | PESI Mail Server (port 25)',     
 	 'mail.keystonesemi.com |  110 | Keystone Mail Server (port 110)',
      'mail.keystonesemi.com |  25 | Keystone Mail Server (port 25)',
 	 'www.pesi.com.tw | 80 | PESI Web server (port 80)',
+	 'www.pesi.com.tw | 443 | PESI Web server (SSL, port 443)',	 
      '120.236.76.36 | ping| SAP (120.236.76.36) (ping)',
      '172.16.101.6 | ping| SAP (172.16.101.6) (ping)',
-	 '127.0.0.2 | 443 | WWW server (SSL, port 443)',
-     '127.0.0.1 |  22 | SSH server (port 22)',
-	 '127.0.0.3 |  21 | FTP server (port 21)',
+	 '172.16.101.6 | 3200| SAP (172.16.101.6) (port 3200)',
+	 '192.168.2.20 | 211| 鼎新 (192.168.2.20) (port 211)',
+	 '192.168.2.20 | 212| 鼎新 (192.168.2.20) (port 212)',
+	 '192.168.2.20 | 213| 鼎新 (192.168.2.20) (port 213)',
+	 '192.168.2.13 | 6666| 鼎新授權主機 (192.168.2.13) (port 6666)',
+	 'ftp2.pesi.com.tw |  21 | PESI FTP server (port 21)',
 	 '-------------------------------------------------',
-	    'Some more examples with errors or not :)|headline',
-	 'www.hostveryunknown.com| 21|www.hostveryunknown.com',
-	 'example.com| 23|example.com:23 (<a href="http://en.wikipedia.org/wiki/Telnet">telnet</a> is dead)',
+	 'Some more examples with errors or not :)|headline',
 	 'Empty and negative ports are ignored||',
-     'this is test||',
-	 'So are lines without pipe delimiter',
-	 'www.google.com  |  80 | WWW server @ google.com',
-	 'localhost       |-ping| Disabled ping',
-	 'www.example.com | -80 | WWW server @ www.example.com',  // no colon here!
-     'this is test 2 :)|headline'
+     'this is test||',  // not display
+     'this is test 2 :)|headline'  // no colon here!
 	);
 	
 	// exec command for ping: -l3 (preload) is recommended but
